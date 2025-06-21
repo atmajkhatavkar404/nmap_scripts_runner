@@ -24,7 +24,7 @@ Before using this tool, ensure the following are installed and configured on you
 1. **Clone the Repository**:
    Open a terminal and run the following commands:
 
-   git clone https://github.com/yourusername/nmap-script-runner.git
+   git clone https://github.com/atmajkhatavkar404/nmap-script-runner.git
    cd nmap-script-runner
   
 
