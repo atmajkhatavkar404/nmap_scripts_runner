@@ -43,10 +43,18 @@ Execute the script by providing the path to the scripts folder and the target IP
 python3 nmap_script_runner.py /path/to/nmapscripts 192.168.1.1
 
 - **Example**:
+- Without Specifying a Port (Scans all ports):
   ```bash
   python3 nmap_script_runner.py /path/to/nmapscripts 192.168.1.1
   ```
   - Replace `192.168.1.1` with the IP address or hostname of the target you have permission to scan.
+  - 
+  - With a Specific Port (Scans only the specified port):
+```bash
+  python3 nmap_script_runner.py /path/to/nmapscripts 192.168.1.1 80
+  ```
+  This will run all scripts against the target IP, but only on port 80.
+    Replace 80 with any valid port number (e.g., 443, 22, etc.) you want to scan.
 
 ### Command-Line Arguments
 - `<script_folder>`: Path to the folder containing `.nse` files (e.g., `./nmap_automated_scripts`).
