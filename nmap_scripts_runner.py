@@ -3,7 +3,7 @@ import subprocess
 import sys
 from datetime import datetime
 
-def run_nmap_scripts(script_folder, target_ip, output_dir="nmap_output"):
+def run_nmap_scripts(script_folder, target_ip, output_dir="nmap_output", port=None):
     # Create output directory if it doesn't exist
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
@@ -31,6 +31,11 @@ def run_nmap_scripts(script_folder, target_ip, output_dir="nmap_output"):
             "-oN", output_file
         ]
         
+        # Add port option if specified
+        if port:
+            nmap_command.insert(3, "-p")
+            nmap_command.insert(4, port)
+        
         print(f"\nRunning script: {script}")
         try:
             # Execute Nmap command
@@ -51,19 +56,20 @@ def run_nmap_scripts(script_folder, target_ip, output_dir="nmap_output"):
 
 def main():
     # Check if correct number of arguments are provided
-    if len(sys.argv) != 3:
-        print("Usage: python nmap_script_runner.py <script_folder> <target_ip>")
+    if len(sys.argv) < 3 or len(sys.argv) > 4:
+        print("Usage: python nmap_script_runner.py <script_folder> <target_ip> [port]")
         sys.exit(1)
     
     script_folder = sys.argv[1]
     target_ip = sys.argv[2]
+    port = sys.argv[3] if len(sys.argv) == 4 else None
     
     # Validate folder exists
     if not os.path.isdir(script_folder):
         print(f"Error: {script_folder} is not a valid directory")
         sys.exit(1)
     
-    run_nmap_scripts(script_folder, target_ip)
+    run_nmap_scripts(script_folder, target_ip, port=port)
 
 if __name__ == "__main__":
     main()
