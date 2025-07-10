@@ -23,10 +23,10 @@ Before using this tool, ensure the following are installed and configured on you
 
 1. **Clone the Repository**:
    Open a terminal and run the following commands:
-
+```bash
    git clone https://github.com/atmajkhatavkar404/nmap_scripts_runner.git
    cd nmap-script-runner
-  
+   ```
 
 2. **Verify Contents**:
    - The repository includes `nmap_scripts_runner.py` and a folder `nmap_automated_scripts` containing `.nse` files.
