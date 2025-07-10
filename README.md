@@ -25,7 +25,7 @@ Before using this tool, ensure the following are installed and configured on you
    Open a terminal and run the following commands:
 ```bash
    git clone https://github.com/atmajkhatavkar404/nmap_scripts_runner.git
-   cd nmap-script-runner
+   cd nmap-scripts-runner
    ```
 
 2. **Verify Contents**:
@@ -45,13 +45,13 @@ python3 nmap_script_runner.py /path/to/nmapscripts 192.168.1.1
 - **Example**:
 - Without Specifying a Port (Scans all ports):
   ```bash
-  python3 nmap_script_runner.py /path/to/nmapscripts 192.168.1.1
+  python3 nmap_scripts_runner.py /path/to/nmapscripts 192.168.1.1
   ```
   - Replace `192.168.1.1` with the IP address or hostname of the target you have permission to scan.
   - 
   - With a Specific Port (Scans only the specified port):
 ```bash
-  python3 nmap_script_runner.py /path/to/nmapscripts 192.168.1.1 80
+  python3 nmap_scripts_runner.py /path/to/nmapscripts 192.168.1.1 80
   ```
   This will run all scripts against the target IP, but only on port 80.
     Replace 80 with any valid port number (e.g., 443, 22, etc.) you want to scan.
